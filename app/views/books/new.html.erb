@@ -1,2 +1,11 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+
+<h1>New Book</h1>
+<%= form_with model: Book.new do |f| %>
+ <h2>Titel</h2>
+ <%= f.text_field :title %>
+
+ <h2>Body</h2>
+ <%= f.text_area :body %>
+ 
+ <%= f.submit 'Create Book' %>
+<% end %>
