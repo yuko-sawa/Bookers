@@ -13,16 +13,16 @@
   <tr>
    <td><%= book.title %></td>
    <td><%= book.body %></td>
-   <td><%= link_to "show",book_path(book.id) %></td>
-   <td><%= link_to "edit", edit_book_path(book.id) %></td>
-   <td><%= link_to "destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+   <td><%= link_to "Show", book_path(book.id) %></td>
+   <td><%= link_to "Edit", edit_book_path(book.id) %></td>
+   <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
   </tr>
   
  <% end %>
  </tbody>
 </table>
 
- <%= form_with model: @book, local: true do |f| %>
+ 
  
  <h2>New book</h2>
 <div class= "error_1">
@@ -36,7 +36,7 @@
  </div>
  <% end %>
   
- 
+ <%= form_with model: @book, local: true do |f| %>
   <div class="field">
    <label for ="title">Titel</label>
    <%= f.text_field :title %>
